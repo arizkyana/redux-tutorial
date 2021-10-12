@@ -1,5 +1,5 @@
-import { Provider } from 'react-redux';
-import store from '@/redux/store';
+import { Provider } from 'react-redux'; // context component
+import store from '@/redux/store'; // path alias
 
 import '../styles/globals.css';
 
