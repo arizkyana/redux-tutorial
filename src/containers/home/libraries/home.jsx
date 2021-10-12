@@ -1,8 +1,4 @@
-import { useHomeDispatch } from '@/redux/reducers/home/slices';
-
 export default function HomeContainer() {
-  const { home, makeIncrement, makeDecrement } = useHomeDispatch();
-
   return (
     <div className="lg:w-1/4 w-full min-h-screen p-3 mx-auto flex justify-center items-center">
       <div className="text-center w-full h-full ">
@@ -12,20 +8,18 @@ export default function HomeContainer() {
             Counter
           </span>
           <span className="text-5xl block w-full">
-            {home.counter}
+            10
           </span>
           <div className="flex justify-center items-center -mx-1 my-3">
             <button
               type="button"
               className="bg-green-400 mx-1 border border-green-400 text-white px-6 py-2 rounded text-sm hover:bg-green-500"
-              onClick={() => makeIncrement()}
             >
               Add +
             </button>
             <button
               type="button"
               className="bg-white mx-1 border border-green-800 text-green-800 px-6 py-2 rounded text-sm hover:bg-gray-200"
-              onClick={() => makeDecrement()}
             >
               Min -
             </button>
