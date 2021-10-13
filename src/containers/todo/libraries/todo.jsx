@@ -46,6 +46,7 @@ export default function TodoContainer() {
   });
 
   function handleOnSubmit(payload, { resetForm }) {
+    // console.log('payload : ', payload);
     doAddTodo(payload);
     resetForm();
   }
@@ -75,7 +76,7 @@ export default function TodoContainer() {
               <button
                 disabled={!isValid || !dirty}
                 type="submit"
-                className={classNames('text-white w-full py-2 rounded text-sm ', {
+                className={classNames('text-white w-full py-2 rounded text-sm', {
                   'bg-gray-300': !isValid || !dirty,
                   'bg-green-400 hover:bg-green-500': isValid,
                 })}

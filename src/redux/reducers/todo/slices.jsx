@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
 
 const initialState = {
-  todos: [],
+  todos: process.browser && localStorage.getItem('todos')
+    ? JSON.parse(localStorage.getItem('todos')) : [],
 };
 
 const slices = createSlice({
@@ -11,7 +12,13 @@ const slices = createSlice({
   reducers: {
     addTodo(state, actions) {
       const { todo } = actions.payload;
-      state.todos.push(todo);
+      // console.log('todo -> addTodo : ', todo);
+      const newTodos = [...state.todos, todo];
+      Object.assign(state, {
+        ...state,
+        todos: newTodos,
+      });
+      localStorage.setItem('todos', JSON.stringify(state.todos));
     },
     removeTodo(state, actions) {
       const index = actions.payload;
@@ -19,6 +26,7 @@ const slices = createSlice({
       Object.assign(state, {
         todos: filtered,
       });
+      localStorage.setItem('todos', JSON.stringify(state.todos));
     },
   },
 });
@@ -30,6 +38,7 @@ export const useTodoDispatch = () => {
   const dispatch = useDispatch();
 
   const doAddTodo = (todo) => {
+    // console.log('todo -> reducer : ', todo);
     dispatch(addTodo(todo));
   };
 
