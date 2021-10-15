@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import HomeContainer from '@/containers/home';
+import HomeContainer from '@/containers/home-container';
 
 export default function Home() {
   return (

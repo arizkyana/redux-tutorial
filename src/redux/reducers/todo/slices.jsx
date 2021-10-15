@@ -31,7 +31,11 @@ const slices = createSlice({
   },
 });
 
-export const { addTodo, removeTodo } = slices.actions;
+export const {
+  addTodo,
+  removeTodo,
+  removeAll,
+} = slices.actions;
 
 export const useTodoDispatch = () => {
   const { todos } = useSelector((state) => state);

@@ -24,6 +24,8 @@ const slices = createSlice({
 
 export const { decrease, increase } = slices.actions;
 
+// custom hooks -> opsional
+// di sambungkan ke komponen
 export const useHomeDispatch = () => {
   const { home } = useSelector((state) => state);
   const dispatch = useDispatch();
