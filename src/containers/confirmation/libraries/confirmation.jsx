@@ -3,6 +3,7 @@ import Input from '@/components/Input';
 import RadioGroup from '@/components/RadioGroup';
 import Upload from '@/components/Upload';
 import Alert from '@/components/Alert';
+import Select from '@/components/Select';
 import { useConfirmationDispatch } from '@/redux/reducers/confirmation/slices';
 
 const initialValues = {
@@ -38,7 +39,8 @@ export default function ConfirmationContainer() { // React Component
                 handleSubmit,
               }) => (
                 <form className="w-full" onSubmit={handleSubmit}>
-                  <Input
+                  <Select />
+                  {/* <Input
                     title="Nama Pengirim"
                     name="namaPengirim"
                     placeholder="Masukan nama pengirim"
@@ -59,7 +61,7 @@ export default function ConfirmationContainer() { // React Component
                     <button type="submit" className="bg-green-500 hover:bg-green-600 outline-none text-white text-sm py-3 px-6 rounded">
                       Submit
                     </button>
-                  </div>
+                  </div> */}
                 </form>
               )}
             </Formik>
