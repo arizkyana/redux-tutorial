@@ -5,3 +5,8 @@ describe('App Testing', () => {
     expect(a + b).toBe(10);
   });
 });
+
+describe('nama group pengujian', () => {
+  test('nama test / skenario testing nya', () => { });
+  test('nama test / skenario testing nya', async () => { });
+});

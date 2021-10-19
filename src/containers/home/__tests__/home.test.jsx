@@ -22,13 +22,15 @@ describe('Home Testing', () => {
   test('increment counter from button + Add', async () => {
     const incrementButton = screen.getByTestId('increment');
     incrementButton.click();
+    incrementButton.click();
+    incrementButton.click();
     const resultLabel = await screen.findByTestId('result');
-    expect(resultLabel).toHaveTextContent(1);
+    expect(resultLabel).toHaveTextContent(3);
   });
   test('decrement counter from button - Min', async () => {
     const decrementButton = screen.getByTestId('decrement');
     decrementButton.click();
     const resultLabel = await screen.findByTestId('result');
-    expect(resultLabel).toHaveTextContent(0);
+    expect(resultLabel).toHaveTextContent(2);
   });
 });

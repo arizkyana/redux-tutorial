@@ -10,9 +10,13 @@ export default function HomeContainer() {
           <span className="inline-block">
             Counter
           </span>
-          <span className="text-5xl block w-full" data-testid="result">
-            {home.counter}
-          </span>
+          {
+            home.counter > 0 && (
+              <span className="text-5xl block w-full" data-testid="result">
+                {home.counter}
+              </span>
+            )
+          }
           <div className="flex justify-center items-center -mx-1 my-3">
             <button
               type="button"
