@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import CampaignRepository from '@/libraries/repositories/campaign';
 
 const { createSlice } = require('@reduxjs/toolkit');
 
@@ -54,13 +55,10 @@ export const useCampaignDispatch = () => {
   const { campaign } = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  const doFetchDataCampaign = async () => {
+  const doFetchDataCampaign = async (limit) => {
     dispatch(toggleLoading(true));
     try {
-      const response = await fetch('api-nya-apa', {
-        method: 'get',
-      });
-      const data = await response.json();
+      const data = await CampaignRepository.getData(limit);
       dispatch(fetchDataCampaigns(data));
     } catch (error) {
       Promise.error(error);
