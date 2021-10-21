@@ -55,6 +55,7 @@ export const useCampaignDispatch = () => {
   const dispatch = useDispatch();
 
   const doFetchDataCampaign = async () => {
+    dispatch(toggleLoading(true));
     try {
       const response = await fetch('api-nya-apa', {
         method: 'get',
@@ -62,6 +63,7 @@ export const useCampaignDispatch = () => {
       const data = await response.json();
       dispatch(fetchDataCampaigns(data));
     } catch (error) {
+      Promise.error(error);
       dispatch(fetchDataCampaigns([]));
     }
   };

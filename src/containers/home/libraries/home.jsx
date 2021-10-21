@@ -1,11 +1,38 @@
+import { useEffect } from 'react';
 import { useHomeDispatch } from '@/redux/reducers/home/slices';
 
 export default function HomeContainer() {
-  const { home, makeIncrement, makeDecrement } = useHomeDispatch();
+  const {
+    home, makeIncrement, makeDecrement, campaign, doFetchCampaign, loading,
+  } = useHomeDispatch();
+
+  const initiateDataCampaign = async () => {
+    try {
+      await doFetchCampaign();
+    } catch (error) {
+      alert(`error : ${error}`);
+      popup({
+        type: 'error',
+        message: 'Data campaign tidak ditemukan',
+      });
+    }
+  };
+
+  useEffect(() => {
+    initiateDataCampaign();
+  }, []);
+
   return (
     <div className="lg:w-1/4 w-full min-h-screen p-3 mx-auto flex justify-center items-center">
       <div className="text-center w-full h-full ">
         <h1 className="text-2xl font-bold mb-5">Belajar Redux</h1>
+        {
+          loading && (
+            <div>
+              Loading...
+            </div>
+          )
+        }
         <div className="my-3">
           <span className="inline-block">
             Counter
