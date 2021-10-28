@@ -1,25 +1,4 @@
-import CampaignRepository from '@/libraries/repositories/campaign';
-import { useHomeDispatch } from '@/redux/reducers/home/slices';
-
-export async function getServerSideProps() {
-  const data = await CampaignRepository.getData(10);
-  return {
-    props: {
-      campaign: data,
-    },
-  };
-}
-
-export default function LandingPage({ campaign }) {
-  const { doFetchCampaign } = useHomeDispatch();
-
-  const handleOnScrollPage = async (current) => {
-    try {
-      await doFetchCampaign(current + 10);
-    } catch (error) {
-      alert(error);
-    }
-  };
+export default function LandingPage() {
   return (
     <div className="w-screen relative bg-red-50 min-h-screen">
       <nav className="border bg-green-50 h-16 flex justify-start items-center">

@@ -1,26 +1,9 @@
-import { useEffect } from 'react';
 import { useHomeDispatch } from '@/redux/reducers/home/slices';
 
 export default function HomeContainer() {
   const {
-    home, makeIncrement, makeDecrement, campaign, doFetchCampaign, loading,
+    home, makeIncrement, makeDecrement, loading,
   } = useHomeDispatch();
-
-  const initiateDataCampaign = async () => {
-    try {
-      await doFetchCampaign();
-    } catch (error) {
-      alert(`error : ${error}`);
-      popup({
-        type: 'error',
-        message: 'Data campaign tidak ditemukan',
-      });
-    }
-  };
-
-  useEffect(() => {
-    initiateDataCampaign();
-  }, []);
 
   return (
     <div className="lg:w-1/4 w-full min-h-screen p-3 mx-auto flex justify-center items-center">
