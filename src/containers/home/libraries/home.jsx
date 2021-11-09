@@ -20,6 +20,9 @@ export default function HomeContainer() {
           <span className="inline-block">
             Counter
           </span>
+          <span className="inline-block">
+            Counter
+          </span>
           {
             home.counter > 0 && (
               <span className="text-5xl block w-full" data-testid="result">

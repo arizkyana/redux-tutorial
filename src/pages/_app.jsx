@@ -7,9 +7,7 @@ import '../styles/app.css'; // custom css -> menambahkan font
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <div>
-        Dari App
-      </div>
+
       <Component {...pageProps} />
     </Provider>
   );

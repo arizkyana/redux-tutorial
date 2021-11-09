@@ -6,6 +6,7 @@
       "@/components/*": ["./src/components/*"],
       "@/containers/*": ["./src/containers/*"],
       "@/redux/*": ["./src/redux/*"],
+      "@/dummies/*": ["./src/dummies/*"]
     }
   }
 }

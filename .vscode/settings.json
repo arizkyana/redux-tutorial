@@ -1,8 +1,8 @@
 {
   "terminal.integrated.lineHeight": 2,
   "terminal.integrated.fontSize": 15,
-  "editor.lineHeight": 70,
-  "editor.fontSize": 21,
+  "editor.lineHeight": 65,
+  "editor.fontSize": 18,
   "eslint.format.enable": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
